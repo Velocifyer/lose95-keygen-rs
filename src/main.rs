@@ -54,4 +54,9 @@ fn main() {
             };
         }
     }
+    print!("Retail key: {}-", first3);
+    for x in array { 
+        print!("{}",x);
+    }
+    println!();
 }
