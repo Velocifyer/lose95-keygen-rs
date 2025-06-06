@@ -14,17 +14,19 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
             }   
         };
     
-        return sum%7 == 0;
-    };
+        if sum%7 != 0{
+            return false
+        };
+    };if ran == false {return false;}
     true
 }
 fn main() {
     println!("Im running");
-    let mut first3:u16 = 000;
-    if first3 != 000 {
+    let mut first3:u16 = 333;
+    if first3 != 333 {
         println!("first3 initilisation failed")
     };
-    while first3 != 333 && first3 != 444 && first3 != 555 && first3 != 666 && first3 != 777 && first3 != 888{//* we can skip check if      *
+    while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888{//* we can skip check if      *
         first3= rand::rng().random_range(0..=998);                                                           //* first3 != 999 becuase of  *
     }                                                                                                        //* random_range not allowing *
     // second part                                                                                           //* first3 to be 999          *
@@ -47,14 +49,14 @@ fn main() {
             }
         }
         let mut array_valid_ran = false;
-        while array_valid(&array,array_valid_ran){
+        while !array_valid(&array,array_valid_ran){
             array_valid_ran = true;
             for x in 0..7 {
                 array[x] = rand::rng().random_range(0..=9);
             };
         }
     }
-    print!("Retail key: {}-", first3);
+    print!("Retail key: {:0>3}-", first3);
     for x in array { 
         print!("{}",x);
     }
