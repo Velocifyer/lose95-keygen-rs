@@ -46,6 +46,7 @@ fn main() {
         first3= rand::rng().random_range(0..=998);                                                           //* first3 != 999 becuase of  *\\
     }                                                                                                        //* random_range not allowing *\\
     let first3 = first3;// make first3 imutable                                                         //* first3 to be 999          *\\
+    // second part
     let mut array: [i8;7] = [10,10,10,10,10,10,10];
     {
         
