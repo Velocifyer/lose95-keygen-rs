@@ -42,10 +42,10 @@ fn main() {
     if first3 != 333 {
         println!("first3 initilisation failed")
     };
-    while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888{//* we can skip check if      *
-        first3= rand::rng().random_range(0..=998);                                                           //* first3 != 999 becuase of  *
-    }                                                                                                        //* random_range not allowing *
-    // second part                                                                                           //* first3 to be 999          *
+    while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888{//* we can skip check if      *\\
+        first3= rand::rng().random_range(0..=998);                                                           //* first3 != 999 becuase of  *\\
+    }                                                                                                        //* random_range not allowing *\\
+    let first3 = first3;// make first3 imutable                                                         //* first3 to be 999          *\\
     let mut array: [i8;7] = [10,10,10,10,10,10,10];
     {
         
@@ -72,6 +72,7 @@ fn main() {
             };
         }
     }
+    let array = array; // Make array imutable becuase it should change after here
     print!("Retail key: {:0>3}-", first3);
     for x in array { 
         print!("{}",x);
