@@ -74,9 +74,17 @@ fn main() {
         }
     }
     let array = array; // Make array imutable becuase it should change after here
+    let second3: u16 = rand::rng().random_range(1..=366);
+    if second3 > 366 || second3 <1 {println!("Second3 randomisation failed");}
+    let first2: i8 = rand::rng().random_range(95..103) % 100;
     print!("Retail key: {:0>3}-", first3);
     for x in array { 
         print!("{}",x);
     }
     println!();
+    print!("OEM key == {:0>3}{:0>2}-OEM-",second3,first2);
+    for x in array { 
+        print!("{}",x);
+    }
+    println!("-{:0>5}", rand::rng().random_range(0..100000));
 }
