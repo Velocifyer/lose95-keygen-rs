@@ -47,6 +47,7 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
     true
 }
 /// Generates a array of 7 digits where the sum of the digits is divisible by 7
+/// Version field 
 pub fn gen_array() -> [i8;7] {
     let mut array: [i8;7] = [10,10,10,10,10,10,10];
     {
@@ -98,7 +99,7 @@ pub fn gen_retail() -> String {
 /// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder
 pub fn gen_oem() -> String {
     let second3: u16 = rand::rng().random_range(1..=366);
-    if second3 > 366 || second3 <1 {println!("618778 Second3 randomisation failed");}
+    if second3 > 366 || second3 <1 {panic!("618778 Second3 randomisation failed");}
     let first2: i8 = rand::rng().random_range(95..103) % 100;
     let array = gen_array();
     format!("{:03}{:02}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
