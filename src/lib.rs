@@ -27,7 +27,7 @@ The above copyright notice and this permission notice (including the next paragr
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 fn array_valid(array: &[i8;7],ran: bool) -> bool {
-    if ran == true{
+    if ran {
         let mut sum = 0;
         if sum != 0 {
             panic!("8065156 sum initilisation failed");
@@ -43,7 +43,7 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
         if sum%7 != 0{
             return false
         };
-    };if ran == false {return false;}
+    }else if !ran {return false;}
     true
 }
 /// Generates a array of 7 digits where the sum of the digits is divisible by 7.
@@ -75,8 +75,8 @@ pub fn gen_array(version:u128, zeroed_digits_at_start:usize) -> [i8;7] {
         }
         while !array_valid(&array,array_valid_ran){
             array_valid_ran = true;
-            for x in zeroed_digits_at_start..7 {
-                array[x] = rand::rng().random_range(0..=9);
+            for h in array.iter_mut().skip(zeroed_digits_at_start) {
+                *h = rand::rng().random_range(0..=9);
             };
         }
     }
@@ -110,7 +110,7 @@ pub fn gen_oem(version:u128) -> String {
         panic!("676137 version not supported");
     }
     let second3: u16 = rand::rng().random_range(1..=366);
-    if second3 > 366 || second3 <1 {panic!("618778 Second3 randomisation failed");}
+    if !(1..=366).contains(&second3) {panic!("618778 Second3 randomisation failed");}
     let first2: i8 = rand::rng().random_range(95..103) % 100;
     let array = gen_array(0,2);
     format!("{:03}{:02}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
