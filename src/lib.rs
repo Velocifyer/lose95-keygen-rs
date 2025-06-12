@@ -30,12 +30,12 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
     if ran == true{
         let mut sum = 0;
         if sum != 0 {
-            panic!("sum initilisation failed");
+            panic!("8065156 sum initilisation failed");
         }
         for x in array {
             sum += x;
             if *x > 9 {
-                eprintln!("array randomisation failed");
+                eprintln!("9049629 array randomisation failed");
                 return false
             }   
         };
@@ -52,18 +52,18 @@ pub fn gen_array() -> [i8;7] {
     {
         
         if array != [10,10,10,10,10,10,10] {
-            panic!("array was not correctly initilised")
+            panic!("6300279 array was not correctly initilised")
         };
         {
             let mut b = 0;
             if b != 0 {
-                eprintln!("b initialisation failed");
+                eprintln!("2294571 b initialisation failed");
             }
             for i in array {
                 b += i;
             }
             if b != 70 {
-                panic!("array initilisation is broken");
+                panic!("1676489 array initilisation is broken");
             }
         }
         let mut array_valid_ran = false;
@@ -82,7 +82,7 @@ pub fn gen_array() -> [i8;7] {
 pub fn gen_retail() -> String {
     let mut first3:u16 = 333;
     if !( first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888 || first3 == 999) {
-        panic!("first3 initilisation failed and my code can not easily recovered")
+        panic!("618778 first3 initilisation failed and my code can not easily recovered")
     };
     while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888 || first3 == 999{ /* we can skip check if      */
         first3= rand::rng().random_range(0..=998);                                                                             /* first3 != 999 becuase of  */
@@ -98,7 +98,7 @@ pub fn gen_retail() -> String {
 /// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder
 pub fn gen_oem() -> String {
     let second3: u16 = rand::rng().random_range(1..=366);
-    if second3 > 366 || second3 <1 {println!("Second3 randomisation failed");}
+    if second3 > 366 || second3 <1 {println!("618778 Second3 randomisation failed");}
     let first2: i8 = rand::rng().random_range(95..103) % 100;
     let array = gen_array();
     format!("{:03}{:02}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
