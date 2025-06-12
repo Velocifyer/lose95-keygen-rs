@@ -1,4 +1,11 @@
+1.0.0 :cat_partying: 🎊 🎂🎂🎂🎂🎂 🎉 🚡
+    Add support for the program being used as a library
+    Stable API
+    Add support for only outputting certain stuff when executed as a command.
+    Readme significantly improved.
+    MSRV added
+    improved error handling
+0.2.0
+    Support for OEM keys. DO NOT USE THIS VERSION. IT GENERATES INVALID OEM KEYS
 0.1.0
     Initial release
-0.2.0
-    Support for OEM keys
