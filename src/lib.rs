@@ -30,12 +30,12 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
     if ran == true{
         let mut sum = 0;
         if sum != 0 {
-            println!("sum initilisation failed");
+            panic!("sum initilisation failed");
         }
         for x in array {
             sum += x;
             if *x > 9 {
-                println!("array randomisation failed");
+                eprintln!("array randomisation failed");
                 return false
             }   
         };
@@ -52,18 +52,18 @@ pub fn gen_array() -> [i8;7] {
     {
         
         if array != [10,10,10,10,10,10,10] {
-            println!("array initilisation faifirst3lfirst3first3ed")
+            panic!("array was not correctly initilised")
         };
         {
             let mut b = 0;
             if b != 0 {
-                print!("b initialisation failed");
+                eprintln!("b initialisation failed");
             }
             for i in array {
                 b += i;
             }
             if b != 70 {
-                println!("array initilisation is broken");
+                panic!("array initilisation is broken");
             }
         }
         let mut array_valid_ran = false;
@@ -81,17 +81,17 @@ pub fn gen_array() -> [i8;7] {
 /// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3
 pub fn gen_retail() -> String {
     let mut first3:u16 = 333;
-    if first3 != 333 {
-        println!("first3 initilisation failed")
+    if !( first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888 || first3 == 999) {
+        panic!("first3 initilisation failed and my code can not easily recovered")
     };
-    while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888{ /* we can skip check if      */
-        first3= rand::rng().random_range(0..=998);                                                            /* first3 != 999 becuase of  */
-    }                                                                                                         /* random_range not allowing */
-    let first3 = first3;// make first3 imutable                                                          /* first3 to be 999          */
-    // second part
-    let array: [i8;7] = gen_array();
-    format!("{:03}-{}{}{}{}{}{}{}",first3,array[0],array[1],array[2],array[3],array[4],array[5],array[6])
-}
+    while first3 == 333 || first3 == 444 || first3 == 555 || first3 == 666 || first3 == 777 || first3 == 888 || first3 == 999{ /* we can skip check if      */
+        first3= rand::rng().random_range(0..=998);                                                                             /* first3 != 999 becuase of  */
+    }                                                                                                                          /* random_range not allowing */
+    let first3 = first3;// make first3 imutable                                                                           /* first3 to be 999 but it   */
+    // second part                                                                                                             /* still checked to increase */
+    let array: [i8;7] = gen_array();                                                                                           /* chance of it working when */
+    format!("{:03}-{}{}{}{}{}{}{}",first3,array[0],array[1],array[2],array[3],array[4],array[5],array[6])                      /* first3 is not initilised  */
+}                                                                                                                              /* correctly.                 */
 
 /// Generates a losedows 95 retail key in the format CCCDD-OEM-AAAAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
 /// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits
