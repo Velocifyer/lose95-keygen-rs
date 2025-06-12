@@ -93,7 +93,7 @@ pub fn gen_retail() -> String {
     format!("{:03}-{}{}{}{}{}{}{}",first3,array[0],array[1],array[2],array[3],array[4],array[5],array[6])                      /* first3 is not initilised  */
 }                                                                                                                              /* correctly.                 */
 
-/// Generates a losedows 95 retail key in the format CCCDD-OEM-AAAAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
+/// Generates a losedows 95 OEM key in the format CCCDD-OEM-AAAAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
 /// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits
 /// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder
 pub fn gen_oem() -> String {
