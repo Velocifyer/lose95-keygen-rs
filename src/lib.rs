@@ -49,10 +49,10 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
 /// Generates a array of 7 digits where the sum of the digits is divisible by 7
 /// Version field 
 pub fn gen_array() -> [i8;7] {
-    let mut array: [i8;7] = [10,10,10,10,10,10,10];
+    let mut array: [i8;7] = [0,0,10,10,10,10,10];
     {
         
-        if array != [10,10,10,10,10,10,10] {
+        if array != [0,0,10,10,10,10,10] {
             panic!("6300279 array was not correctly initilised")
         };
         {
@@ -63,14 +63,14 @@ pub fn gen_array() -> [i8;7] {
             for i in array {
                 b += i;
             }
-            if b != 70 {
+            if b != 50 {
                 panic!("1676489 array initilisation is broken");
             }
         }
         let mut array_valid_ran = false;
         while !array_valid(&array,array_valid_ran){
             array_valid_ran = true;
-            for x in 0..7 {
+            for x in 2..7 {
                 array[x] = rand::rng().random_range(0..=9);
             };
         }
