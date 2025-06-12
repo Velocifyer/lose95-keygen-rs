@@ -1,4 +1,5 @@
 use lose95_keygen_rs::{gen_oem, gen_retail};
+use std::env;
 /*
 
 Copyright 2025 𝕍𝕖𝕝𝕠𝕔𝕚𝕗𝕪𝕖𝕣
@@ -26,6 +27,30 @@ The above copyright notice and this permission notice (including the next paragr
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 fn main() {
-    println!("Retail key: {}", gen_retail(0));
-    println!("OEM key: {}", gen_oem(0))
+
+    let args: Vec<String> = env::args().collect();
+    let mut version = String::from("0");
+    let mut print_selection = "all".to_string();
+    if args.len() > 1 {
+        version = args[1].clone();
+        if args.len() > 2 {
+            print_selection = args[2].clone();
+        }
+    } 
+
+    if 0 != version.trim().parse().expect("8381374 version is not valid") {
+        panic!("3781596 version not supported");
+    }
+    if print_selection == "all" || print_selection == "retail" || print_selection == "Retail" || print_selection == "0" {
+        if print_selection == "all" {
+            print!("Retail key: ")
+        }
+        println!("{}", gen_retail(0));
+    }
+    if print_selection == "all" || print_selection == "OEM" ||  print_selection == "oem" || print_selection == "1" {
+        if print_selection == "all" {
+            print!("OEM key: ")
+        }
+        println!("{}", gen_oem(0));
+    }
 }

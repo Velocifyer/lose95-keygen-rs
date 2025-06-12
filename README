@@ -4,5 +4,9 @@ it Generates a losedows 95 retail key in the format BBB-AAAAAAA and a losedows 9
 or 00 or 01 or 02 or 03 and RRRRR is 5 random digits where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999
 and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3 of the retail key
 
+Can be ran as a command in the syntax 
+`lose95-keygen-rs version keys_printed`
+Version currently can only be `0` but in the future will be able to controll what format arguments will be taken in and what format stuff will be outputted in. 
+Keys_printed defaults to `all` witch println!s all keys but if set to `0` or `retail` or `Retail` it only println!s the retail key and if it is `1` or `OEM` or `oem` it only prints the oem key
 To use as a library use gen_retail(0) to generate a retail key as a String
 or gen_oem(0) to generate a OEM key as a String
