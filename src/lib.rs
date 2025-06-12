@@ -46,7 +46,8 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
     };if ran == false {return false;}
     true
 }
-fn gen_array() -> [i8;7] {
+/// Generates a array of 7 digits where the sum of the digits is divisible by 7
+pub fn gen_array() -> [i8;7] {
     let mut array: [i8;7] = [10,10,10,10,10,10,10];
     {
         
@@ -76,6 +77,8 @@ fn gen_array() -> [i8;7] {
     array
 }
 
+/// Generates a losedows 95 retail key in the format BBB-AAAAAAA where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999
+/// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3
 pub fn gen_retail() -> String {
     let mut first3:u16 = 333;
     if first3 != 333 {
@@ -89,10 +92,14 @@ pub fn gen_retail() -> String {
     let array: [i8;7] = gen_array();
     format!("{:03}-{}{}{}{}{}{}{}",first3,array[0],array[1],array[2],array[3],array[4],array[5],array[6])
 }
+
+/// Generates a losedows 95 retail key in the format CCCDD-OEM-AAAAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
+/// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits
+/// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder
 pub fn gen_oem() -> String {
     let second3: u16 = rand::rng().random_range(1..=366);
     if second3 > 366 || second3 <1 {println!("Second3 randomisation failed");}
     let first2: i8 = rand::rng().random_range(95..103) % 100;
     let array = gen_array();
-    format!("{:0>3}{:0>2}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
+    format!("{:03}{:02}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
 }
