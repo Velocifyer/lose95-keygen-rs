@@ -46,13 +46,12 @@ fn array_valid(array: &[i8;7],ran: bool) -> bool {
     };if ran == false {return false;}
     true
 }
-/// Generates a array of 7 digits where the sum of the digits is divisible by 7
-/// Version field 
-pub fn gen_array() -> [i8;7] {
-    let mut array: [i8;7] = [0,0,10,10,10,10,10];
+/// Generates a array of 7 digits where the sum of the digits is divisible by 7.
+/// zeroed_digits_at_start controlls how many digits are zeroed at the start of the array
+pub fn gen_array(zeroed_digits_at_start:usize) -> [i8;7] {
+    let mut array: [i8;7] = [0,0,0,0,0,0,0];
     {
-        
-        if array != [0,0,10,10,10,10,10] {
+        if array != [0,0,0,0,0,0,0] {
             panic!("6300279 array was not correctly initilised")
         };
         {
@@ -63,14 +62,17 @@ pub fn gen_array() -> [i8;7] {
             for i in array {
                 b += i;
             }
-            if b != 50 {
+            if b != 0 {
                 panic!("1676489 array initilisation is broken");
             }
         }
         let mut array_valid_ran = false;
+        if zeroed_digits_at_start >= 7 {
+            panic!("3248265 zeroed_digits_at_start >= 7");
+        }
         while !array_valid(&array,array_valid_ran){
             array_valid_ran = true;
-            for x in 2..7 {
+            for x in zeroed_digits_at_start..7 {
                 array[x] = rand::rng().random_range(0..=9);
             };
         }
@@ -90,7 +92,7 @@ pub fn gen_retail() -> String {
     }                                                                                                                          /* random_range not allowing */
     let first3 = first3;// make first3 imutable                                                                           /* first3 to be 999 but it   */
     // second part                                                                                                             /* still checked to increase */
-    let array: [i8;7] = gen_array();                                                                                           /* chance of it working when */
+    let array: [i8;7] = gen_array(0);                                                                                           /* chance of it working when */
     format!("{:03}-{}{}{}{}{}{}{}",first3,array[0],array[1],array[2],array[3],array[4],array[5],array[6])                      /* first3 is not initilised  */
 }                                                                                                                              /* correctly.                 */
 
@@ -101,6 +103,6 @@ pub fn gen_oem() -> String {
     let second3: u16 = rand::rng().random_range(1..=366);
     if second3 > 366 || second3 <1 {panic!("618778 Second3 randomisation failed");}
     let first2: i8 = rand::rng().random_range(95..103) % 100;
-    let array = gen_array();
+    let array = gen_array(2);
     format!("{:03}{:02}-OEM-{}{}{}{}{}{}{}-{:05}",second3,first2,array[0],array[1],array[2],array[3],array[4],array[5],array[6],rand::rng().random_range(0..100000))
 }
