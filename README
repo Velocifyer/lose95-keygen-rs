@@ -10,3 +10,5 @@ Version currently can only be `0` but in the future will be able to controll wha
 Keys_printed defaults to `all` witch println!s all keys but if set to `0` or `retail` or `Retail` it only println!s the retail key and if it is `1` or `OEM` or `oem` it only prints the oem key
 To use as a library use gen_retail(0) to generate a retail key as a String
 or gen_oem(0) to generate a OEM key as a String
+
+If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
