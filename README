@@ -1,8 +1,9 @@
-A tool to generate losedows 95 keys
+# A tool to generate losedows 95 keys
 
-it Generates a losedows 95 retail key in the format BBB-AAAAAAA and a losedows 95 retail key in the format CCCDD-OEM-AAAAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
+It Generates a losedows 95 retail key in the format BBB-AAAAAAA and a losedows 95 OEM key in the format CCCDD-OEM-00AAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
 or 00 or 01 or 02 or 03 and RRRRR is 5 random digits where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999
-and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3 of the retail key
+and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder and 00AAAAA is the same but the first 2 digits are 0.
+ Losedows 95 does not actualy care about charector 3 of the retail key
 
 Can be ran as a command in the syntax 
 `lose95-keygen-rs version keys_printed`
