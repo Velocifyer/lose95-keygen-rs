@@ -33,8 +33,7 @@ fn main() {
     if args.len() > 1 {
         version = args[1].clone();
         if args.len() > 2 {
-            print_selection =
-                command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true);
+            print_selection = command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true);
         }
     }
     if print_selection > Some(1) && print_selection != Some(255) {
