@@ -29,15 +29,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 fn main() {
     let args: Vec<String> = env::args().collect();
     let mut version = String::from("0");
-    let mut print_selection = 255;
+    let mut print_selection = Some(255);
     if args.len() > 1 {
         version = args[1].clone();
         if args.len() > 2 {
             print_selection =
-                command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true).expect("0");
+                command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true);
         }
     }
-    if print_selection > 1 && print_selection != 255 {
+    if print_selection > Some(1) && print_selection != Some(255) {
         panic!("170989488 command not avalible, consider updating")
     }
     if 0 != version
@@ -47,14 +47,14 @@ fn main() {
     {
         panic!("3781596 version not supported");
     }
-    if print_selection == 255 || print_selection == 0 {
-        if print_selection == 255 {
+    if print_selection == Some(255) || print_selection == Some(0) {
+        if print_selection == Some(255) {
             print!("Retail key: ")
         }
         println!("{}", gen_retail(0));
     }
-    if print_selection == 1 || print_selection == 255 {
-        if print_selection == 255 {
+    if print_selection == Some(1) || print_selection == Some(255) {
+        if print_selection == Some(255) {
             print!("OEM key: ")
         }
         println!("{}", gen_oem(0));
