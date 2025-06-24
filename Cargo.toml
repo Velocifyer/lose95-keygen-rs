@@ -11,5 +11,5 @@ categories = ["command-line-utilities", "algorithms"]
 rust-version = "1.85.1"
 
 [dependencies]
-command-ifyer = "0.1.3"
+command-ifyer = "0.1.4"
 rand = "0.9.1"
