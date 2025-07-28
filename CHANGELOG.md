@@ -17,3 +17,7 @@
 ## 1.1.2
     Not panic if command-ifyer returns none.
     Fixes unintended major change in the CLI in 1.1.0
+## 1.1.3
+    Make code better, Improved README
+    Clippy is now pedantic and happy
+    Unneeded features in rand are removed
