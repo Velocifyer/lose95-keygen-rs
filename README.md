@@ -20,7 +20,7 @@ lose95-keygen-rs = "1.1.1"
 to your `Cargo.toml`
 Use `gen_retail(0)` to generate a retail key as a String
 or `gen_oem(0)` to generate a OEM key as a String
-or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where the sum of the digits is divisible by 7. `zeroed_digits_at_start` controls how many digits are zeroed at the start of the array
+or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where the sum of the digits is divisible by 7 with`zeroed_digits_at_start` digits of the start of the array that are 0
 
 ## Installation
   To install run `cargo install lose95-keygen-rs`
