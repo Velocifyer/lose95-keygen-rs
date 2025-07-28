@@ -21,3 +21,5 @@
     Make code better, Improved README
     Clippy is now pedantic and happy
     Unneeded features in rand are removed
+## 1.1.4
+    Fix README.md
