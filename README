@@ -5,11 +5,14 @@ or 00 or 01 or 02 or 03 and RRRRR is 5 random digits where BBB is 3 digits that 
 and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder and 00AAAAA is the same but the first 2 digits are 0.
  Losedows 95 does not actualy care about charector 3 of the retail key
 
-Can be ran as a command in the syntax 
+Can be ran as a command in the syntax
 `lose95-keygen-rs version keys_printed`
-Version currently can only be `0` but in the future will be able to controll what format arguments will be taken in and what format stuff will be outputted in. 
+Version currently can only be `0` but in the future will be able to controll what format arguments will be taken in and what format stuff will be outputted in.
 Keys_printed defaults to 255(`all`) witch outputs all keys but if set to 0(`retail`) it only outputs the retail key and if it is 1(`OEM`) (case insensitive) it only outputs the oem key
 To use as a library use gen_retail(0) to generate a retail key as a String
 or gen_oem(0) to generate a OEM key as a String
 
 If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
+
+This project is maintained on [radicle](https://radicle.xyz/) in [rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8](https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8).
+ If you do not want to use radicle but want to create a issue you can find [`lose95-keygen-rs` on github](https://github.com/Velocifyer/lose95-keygen-rs)
