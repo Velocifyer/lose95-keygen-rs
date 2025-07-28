@@ -98,6 +98,7 @@ pub fn gen_retail(version: u128) -> String {
         || first3 == 777
         || first3 == 888
         || first3 == 999) {
+        eat(first3);
         panic!("618778 first3 initilisation failed and my code can not easily recovered")
     }
     while first3 == 333

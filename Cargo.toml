@@ -12,6 +12,7 @@ rust-version = "1.85.1"
 
 [dependencies]
 command-ifyer = "0.1.4"
+eat = "0.1.0"
 rand = { version = "0.9.1", default-features = false, features = [
     "thread_rng",
 ] }
