@@ -4,6 +4,8 @@
     reason = "Redundant else makes the code easier to read in most cases"
 )]
 #![warn(clippy::cargo)]
+#![allow(clippy::missing_panics_doc)]
+#![allow(clippy::must_use_candidate, reason = "I dont know what `#must_use` means")]
 use rand::Rng;
 
 /*******************************************************************************
@@ -33,15 +35,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 // Open a issue if you need array_valid to be public
-fn array_valid(array: &[i8; 7], ran: bool) -> bool {
+fn array_valid(array: [i8; 7], ran: bool) -> bool {
     if ran {
         let mut sum = 0;
-        if sum != 0 {
-            panic!("8065156 sum initilisation failed");
-        }
+        assert!(sum == 0, "8065156 sum initilisation failed");
         for x in array {
             sum += x;
-            if *x > 9 {
+            if x > 9 {
                 eprintln!("9049629 array randomisation failed");
                 return false;
             }
@@ -49,23 +49,19 @@ fn array_valid(array: &[i8; 7], ran: bool) -> bool {
 
         if sum % 7 != 0 {
             return false;
-        };
+        }
     } else if !ran {
         return false;
     }
     true
 }
 /// Generates a array of 7 digits where the sum of the digits is divisible by 7.
-/// zeroed_digits_at_start controlls how many digits are zeroed at the start of the array
+/// `zeroed_digits_at_start` controls how many digits are zeroed at the start of the array
 pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
-    if version != 0 {
-        panic!("676147 version not supported");
-    }
+    assert!(version == 0, "676147 version not supported");
     let mut array: [i8; 7] = [0, 0, 0, 0, 0, 0, 0];
     {
-        if array != [0, 0, 0, 0, 0, 0, 0] {
-            panic!("6300279 array was not correctly initilised")
-        };
+        assert!(array == [0, 0, 0, 0, 0, 0, 0], "6300279 array was not correctly initilised");
         {
             let mut b = 0;
             if b != 0 {
@@ -74,15 +70,11 @@ pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
             for i in array {
                 b += i;
             }
-            if b != 0 {
-                panic!("1676489 array initilisation is broken");
-            }
+            assert!(b == 0, "1676489 array initilisation is broken");
         }
         let mut array_valid_ran = false;
-        if zeroed_digits_at_start >= 7 {
-            panic!("3248265 zeroed_digits_at_start >= 7");
-        }
-        while !array_valid(&array, array_valid_ran) {
+        assert!(zeroed_digits_at_start < 7, "3248265 zeroed_digits_at_start >= 7");
+        while !array_valid(array, array_valid_ran) {
             array_valid_ran = true;
             for h in array.iter_mut().skip(zeroed_digits_at_start) {
                 *h = rand::rng().random_range(0..=9);
@@ -95,9 +87,7 @@ pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
 /// Generates a losedows 95 retail key in the format BBB-AAAAAAA where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999
 /// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3
 pub fn gen_retail(version: u128) -> String {
-    if version != 0 {
-        panic!("676138 version not supported");
-    }
+    assert!(version == 0, "676138 version not supported");
     let mut first3: u16 = 333;
     if !(first3 == 333
         || first3 == 444
@@ -108,7 +98,7 @@ pub fn gen_retail(version: u128) -> String {
         || first3 == 999)
     {
         panic!("618778 first3 initilisation failed and my code can not easily recovered")
-    };
+    }
     while first3 == 333
         || first3 == 444
         || first3 == 555
@@ -132,13 +122,9 @@ pub fn gen_retail(version: u128) -> String {
 /// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits
 /// and AAAAA is 5 digits where the sum of the digits is divisible by 7 with no remainder
 pub fn gen_oem(version: u128) -> String {
-    if version != 0 {
-        panic!("676137 version not supported");
-    }
+    assert!(version == 0, "676137 version not supported");
     let second3: u16 = rand::rng().random_range(1..=366);
-    if !(1..=366).contains(&second3) {
-        panic!("618778 Second3 randomisation failed");
-    }
+    assert!((1..=366).contains(&second3), "618778 Second3 randomisation failed");
     let first2: i8 = rand::rng().random_range(95..103) % 100;
     let array = gen_array(0, 2);
     format!(
@@ -152,6 +138,6 @@ pub fn gen_oem(version: u128) -> String {
         array[4],
         array[5],
         array[6],
-        rand::rng().random_range(0..100000)
+        rand::rng().random_range(0..100_000)
     )
 }
