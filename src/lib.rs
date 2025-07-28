@@ -1,3 +1,9 @@
+#![warn(clippy::pedantic)]
+#![allow(
+    clippy::redundant_else,
+    reason = "Redundant else makes the code easier to read in most cases"
+)]
+#![warn(clippy::cargo)]
 use rand::Rng;
 
 /*******************************************************************************
