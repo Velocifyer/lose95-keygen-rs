@@ -12,7 +12,8 @@ Version currently can only be `0` but in the future will be able to controll wha
 Keys_printed defaults to 255(`all`) witch outputs all keys but if set to 0(`retail`) it only outputs the retail key and if it is 1(`OEM`) (case insensitive) it only outputs the oem key
 
 ## Usage as library
-Add ```toml
+Add
+```toml
 [dependencies]
 lose95-keygen-rs = "1.1.1"
 ```
