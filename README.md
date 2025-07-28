@@ -28,7 +28,7 @@ or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where
   If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is >= `1.85.1` by running `rustc -Vv`
   If you install rust using packages provided by your distribution, use `rustup` instead to get the latest version of rust.
 ## Radicle and Github
-  This project is maintained on [radicle](https://radicle.xyz/) in [rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8](https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8).
+  This project is maintained on [radicle](https://radicle.xyz/) in [`rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8`](https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8).
   If you do not want to install radicle but want to create a issue you can find [`lose95-keygen-rs` on github](https://github.com/Velocifyer/lose95-keygen-rs)
 
 ## Self Promotion
