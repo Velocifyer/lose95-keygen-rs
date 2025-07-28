@@ -15,4 +15,4 @@ or gen_oem(0) to generate a OEM key as a String
 If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
 
 This project is maintained on [radicle](https://radicle.xyz/) in [rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8](https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8).
- If you do not want to use radicle but want to create a issue you can find [`lose95-keygen-rs` on github](https://github.com/Velocifyer/lose95-keygen-rs)
+ If you do not want to install radicle but want to create a issue you can find [`lose95-keygen-rs` on github](https://github.com/Velocifyer/lose95-keygen-rs)
