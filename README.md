@@ -9,8 +9,8 @@ Can be ran as a command in the syntax
 `lose95-keygen-rs version keys_printed`
 Version currently can only be `0` but in the future will be able to controll what format arguments will be taken in and what format stuff will be outputted in.
 Keys_printed defaults to 255(`all`) witch outputs all keys but if set to 0(`retail`) it only outputs the retail key and if it is 1(`OEM`) (case insensitive) it only outputs the oem key
-To use as a library use gen_retail(0) to generate a retail key as a String
-or gen_oem(0) to generate a OEM key as a String
+To use as a library use `gen_retail(0)` to generate a retail key as a String
+or `gen_oem(0)` to generate a OEM key as a String
 
 If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
 
