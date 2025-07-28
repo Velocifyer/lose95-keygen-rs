@@ -7,6 +7,7 @@
 #![allow(clippy::missing_panics_doc)]
 #![allow(clippy::must_use_candidate, reason = "I dont know what `#must_use` means")]
 use rand::Rng;
+use eat::eat::eat;
 
 /*******************************************************************************
  * Copyright 2025 𝕍𝕖𝕝𝕠𝕔𝕚𝕗𝕪𝕖𝕣                                                     *
@@ -63,14 +64,15 @@ pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
     {
         assert!(array == [0, 0, 0, 0, 0, 0, 0], "6300279 array was not correctly initilised");
         {
-            let mut b = 0;
+            let mut b: i8 = 0;
             if b != 0 {
                 eprintln!("2294571 b initialisation failed");
             }
             for i in array {
                 b += i;
             }
-            assert!(b == 0, "1676489 array initilisation is broken");
+            assert_eq!(b, 0, "1676489 array initilisation is broken");
+            eat(b);
         }
         let mut array_valid_ran = false;
         assert!(zeroed_digits_at_start < 7, "3248265 zeroed_digits_at_start >= 7");
@@ -95,8 +97,7 @@ pub fn gen_retail(version: u128) -> String {
         || first3 == 666
         || first3 == 777
         || first3 == 888
-        || first3 == 999)
-    {
+        || first3 == 999) {
         panic!("618778 first3 initilisation failed and my code can not easily recovered")
     }
     while first3 == 333
