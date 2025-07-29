@@ -92,12 +92,12 @@ pub fn gen_retail(version: u128) -> String {
     assert!(version == 0, "676138 version not supported");
     let mut first3: u16 = 333;
     if first3 != 333
-    || first3 != 444 // Its ok if first3 is not 333 becuase that would be cuaght by the next function anyways
-    || first3 != 555
-    || first3 != 666
-    || first3 != 777
-    || first3 != 888
-    || first3 != 999 {
+    && first3 != 444 // Its ok if first3 is not 333 becuase that would be cuaght by the next function anyways
+    && first3 != 555
+    && first3 != 666
+    && first3 != 777
+    && first3 != 888
+    && first3 != 999 {
         eat(first3);
         panic!("618778 first3 initilisation failed and my code can not easily recovered")
     }
