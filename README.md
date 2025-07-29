@@ -25,7 +25,7 @@ or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where
 ## Installation
   To install run `cargo install lose95-keygen-rs`
   If that fails try `cargo install --locked lose95-keygen-rs`
-  If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is >= `1.85.1` by running `rustc -Vv`
+  If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is ≥ `1.85.1` by running `rustc -Vv`
   If you install rust using packages provided by your distribution, use `rustup` instead to get the latest version of rust.
 ## Radicle and Github
   This project is maintained on [radicle](https://radicle.xyz/) in [`rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8`](https://app.radicle.xyz/nodes/seed.radicle.garden/rad%3Az2ADKLfsXMdsFt7vQq6qQDnbPD9b8).
