@@ -23,3 +23,5 @@
     Unneeded features in rand are removed
 ## 1.1.4
     Fix README.md
+## 1.1.5
+    Fix code panicing.
