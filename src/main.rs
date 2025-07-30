@@ -36,10 +36,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let mut version = String::from("0");
+    let mut version = &String::from("0");
     let mut print_selection = Some(255);
     if args.len() > 1 {
-        version = args[1].clone();
+        version = &args[1];
         if args.len() > 2 {
             print_selection = command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true);
         }
