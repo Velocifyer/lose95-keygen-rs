@@ -102,12 +102,12 @@ pub fn gen_retail(version: u128) -> String {
         panic!("618778 first3 initilisation failed and my code can not easily recovered")
     }
     while first3 == 333
-        || first3 == 444
-        || first3 == 555
-        || first3 == 666
-        || first3 == 777
-        || first3 == 888
-        || first3 == 999 // We dont need to check if first3 == 999 becuase random range does not allow it,but it is still checked in case rand is broken or first3 is not properly initilised
+       || first3 == 444
+       || first3 == 555
+       || first3 == 666
+       || first3 == 777
+       || first3 == 888
+       || first3 == 999 // We dont need to check if first3 == 999 becuase random range does not allow it,but it is still checked in case rand is broken or first3 is not properly initilised
     {
         first3 = rand::rng().random_range(0..=998);
     }
