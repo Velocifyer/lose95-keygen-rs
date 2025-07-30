@@ -2,7 +2,7 @@
 name = "lose95-keygen-rs"
 version = "0.2.0"
 edition = "2024"
-license = "MIT OR Apache-2.0"
+license = "Apache-2.0"
 description = "Simple Losedows 95 keygen"
 readme = "README"
 repository = "https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8"
@@ -10,4 +10,4 @@ keywords = ["keygen","losedows","losedows-95", "95", "lose95"]
 categories = ["command-line-utilities"]
 
 [dependencies]
-rand = "0.9.1"
+lose95-keygen-rs = "1.1.1"

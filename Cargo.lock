@@ -15,6 +15,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9555578bc9e57714c812a1f84e4fc5b4d21fcb063490c624de019f7464c91268"
 
 [[package]]
+name = "command-ifyer"
+version = "0.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc4d4236b2444ec076cf1d8ed5c3b2790826c8f1bdd84b2ad3eceb830c48443e"
+
+[[package]]
+name = "eat"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd604c9f1967b3b828e26d7e67eda07a660993bb0028b4740a7459fb58ed4469"
+
+[[package]]
 name = "getrandom"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -36,6 +48,17 @@ checksum = "d750af042f7ef4f724306de029d18836c26c1765a54a6a3f094cbd23a7267ffa"
 name = "lose95-keygen-rs"
 version = "0.2.0"
 dependencies = [
+ "lose95-keygen-rs 1.1.5",
+]
+
+[[package]]
+name = "lose95-keygen-rs"
+version = "1.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5ea6d440c1a614c918b7dbca09bcebd649698f919fb65bd2efa9f724aed49ff"
+dependencies = [
+ "command-ifyer",
+ "eat",
  "rand",
 ]
 
