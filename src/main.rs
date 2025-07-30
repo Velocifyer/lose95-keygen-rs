@@ -44,9 +44,7 @@ fn main() {
             print_selection = command_ifyer::what_to_execute(0, &args[2], &["Retail", "Oem"], true);
         }
     }
-    if print_selection > Some(1) && print_selection != Some(255) {
-        panic!("170989488 command not avalible, consider updating")
-    }
+    assert!(!(print_selection > Some(1) && print_selection != Some(255)), "170989488 command not avalible, consider updating");
     if 0 != version
         .trim()
         .parse()
@@ -56,13 +54,13 @@ fn main() {
     }
     if print_selection == Some(255) || print_selection == Some(0) {
         if print_selection == Some(255) {
-            print!("Retail key: ")
+            print!("Retail key: ");
         }
         println!("{}", gen_retail(0));
     }
     if print_selection == Some(1) || print_selection == Some(255) {
         if print_selection == Some(255) {
-            print!("OEM key: ")
+            print!("OEM key: ");
         }
         println!("{}", gen_oem(0));
     }
