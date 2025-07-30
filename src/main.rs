@@ -1,3 +1,11 @@
+#![warn(clippy::pedantic)]
+#![allow(
+    clippy::redundant_else,
+    reason = "Redundant else makes the code easier to read in most cases"
+)]
+#![warn(clippy::cargo)]
+#![allow(clippy::missing_panics_doc)]
+#![allow(clippy::must_use_candidate, reason = "I dont know what `#must_use` means")]
 use lose95_keygen_rs::{gen_oem, gen_retail};
 use std::env;
 /*
