@@ -45,10 +45,8 @@ fn main() {
         }
     }
     assert!(!(print_selection > Some(1) && print_selection != Some(255)), "170989488 command not avalible, consider updating");
-    if 0 != version
-        .trim()
-        .parse()
-        .expect("8381374 version is not valid")
+    if 0 != version.trim()
+        .parse().expect("8381374 version is not valid")
     {
         panic!("3781596 version not supported");
     }
