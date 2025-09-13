@@ -25,5 +25,7 @@
     Fix README.md
 ## 1.1.5
     Fix code panicing.
-## Future release
+## 1.1.6
   Reformat changelog
+  Update Dependencies
+  Move to Codeberg

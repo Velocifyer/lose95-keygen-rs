@@ -40,7 +40,7 @@ checksum = "6a82ae493e598baaea5209805c49bbf2ea7de956d50d7da0da1164f9c6d28543"
 
 [[package]]
 name = "lose95-keygen-rs"
-version = "1.1.5"
+version = "1.1.6"
 dependencies = [
  "command-ifyer",
  "eat",
