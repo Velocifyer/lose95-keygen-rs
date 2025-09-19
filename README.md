@@ -26,7 +26,6 @@ or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where
   To install run `cargo install lose95-keygen-rs`
   If that fails try `cargo install --locked lose95-keygen-rs`
   If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is ≥ `1.85.1` by running `rustc -Vv`
-  If you install rust using packages provided by your distribution, use `rustup` instead to get the latest version of rust.
 ## Codeberg and Github
   This project was maintained on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs).A mirror is available on [github](https://github.com/Velocifyer/lose95-keygen-rs) but it is not as updated as codeberg.
 
