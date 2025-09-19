@@ -17,17 +17,17 @@ Add
 [dependencies]
 lose95-keygen-rs = "1.1.1"
 ```
-to your `Cargo.toml`
+to your `Cargo.toml`.
 Use `gen_retail(0)` to generate a retail key as a String
 or `gen_oem(0)` to generate a OEM key as a String
 or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where the sum of the digits is divisible by 7 with`zeroed_digits_at_start` digits of the start of the array that are 0
 
 ## Installation
-  To install run `cargo install lose95-keygen-rs`
-  If that fails try `cargo install --locked lose95-keygen-rs`
-  If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is ≥ `1.85.1` by running `rustc -Vv`
+  To install run `cargo install lose95-keygen-rs`.
+  If that fails try `cargo install --locked lose95-keygen-rs`.
+  If that fails make sure you have cargo installed by running `cargo --version` and that your rust version is ≥ `1.85.1` by running `rustc -Vv`.
 ## Codeberg and Github
-  This project was maintained on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs).A mirror is available on [github](https://github.com/Velocifyer/lose95-keygen-rs) but it is not as updated as codeberg.
+  This project was maintained on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs). A mirror is available on [github](https://github.com/Velocifyer/lose95-keygen-rs) but it is not as updated as codeberg.
 
 ## Self Promotion
   If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
