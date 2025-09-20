@@ -30,7 +30,7 @@ or `gen_array(0, zeroed_digits_at_start)` to generates a array of 7 digits where
 ## Issues and patches
   Issues can be submited on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs/issues) or [github](https://github.com/Velocifyer/lose95-keygen-rs/issues). Using Codeberg is preferred over github. Patches/Merge requests can be submitted on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs/pulls) or [github](https://github.com/Velocifyer/lose95-keygen-rs/pulls) or using [git-send-email](https://git-send-email.io/) on [the lose95-keygen-rs-devel mailing list](https://lists.sr.ht/~velocifyer/lose95-keygen-rs-devel).
 ## Codeberg and Github
-  This project was maintained on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs). A mirror is available on [github](https://github.com/Velocifyer/lose95-keygen-rs) but it is not as updated as codeberg. A diffrent mirror is avalible on [sourcehut](https://sr.ht/~velocifyer/lose95-keygen-rs/)
+  This project was maintained on [codeberg](https://codeberg.org/Velocifyer/lose95-keygen-rs). A mirror is available on [github](https://github.com/Velocifyer/lose95-keygen-rs) but it is not as updated as codeberg. A diffrent mirror is avalible on [sourcehut](https://sr.ht/~velocifyer/lose95-keygen-rs/).
 
 ## Self Promotion
   If you use cargo-crev, you should add `s67f2b5NTRWJYdgpElWYvNNIXZPLVFK0aTP3IcMo5ck` `https://ash.radicle.garden/zZbBDS6L52The3V6RBqfGtxgKkGa.git`
