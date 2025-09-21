@@ -5,7 +5,7 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Simple Losedows 95 keygen"
 readme = "README"
-repository = "https://app.radicle.xyz/nodes/ash.radicle.garden/rad:z2ADKLfsXMdsFt7vQq6qQDnbPD9b8"
+repository = "https://codeberg.org/Velocifyer/lose95-keygen-rs"
 keywords = ["keygen","losedows","losedows-95", "95", "lose95"]
 categories = ["command-line-utilities"]
 
