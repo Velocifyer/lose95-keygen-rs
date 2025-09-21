@@ -146,3 +146,19 @@ pub fn gen_oem(version: u128) -> String {
         rand::rng().random_range(0..100_000)
     )
 }
+#[cfg(test)]
+mod tests {
+    use crate::array_valid;
+    use crate::gen_array;
+
+    #[test]
+    fn array_valid_is_valid() {
+        assert!(array_valid([0,0,0,0,0,0,0], true));
+        assert!(array_valid([1,1,1,1,1,1,1], true));
+        assert!(!array_valid([0,0,0,0,0,0,1], true));
+    }
+    #[test]
+    fn gen_array_generates_valid_array() {
+        assert!(array_valid(gen_array(0, 0), true));
+    }
+}
