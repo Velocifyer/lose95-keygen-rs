@@ -57,7 +57,8 @@ fn array_valid(array: [i8; 7], ran: bool) -> bool {
     true
 }
 /// Generates a array of 7 digits where the sum of the digits is divisible by 7.
-/// `zeroed_digits_at_start` controls how many digits are zeroed at the start of the array
+/// `version` must be 0.
+/// `zeroed_digits_at_start` controls how many digits are zeroed at the start of the array.
 pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
     assert!(version == 0, "676147 version not supported");
     let mut array: [i8; 7] = [0, 0, 0, 0, 0, 0, 0];
@@ -86,8 +87,9 @@ pub fn gen_array(version: u128, zeroed_digits_at_start: usize) -> [i8; 7] {
     array
 }
 
-/// Generates a losedows 95 retail key in the format BBB-AAAAAAA where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999
-/// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3
+/// Generates a losedows 95 retail key in the format BBB-AAAAAAA where BBB is 3 digits that are not 333 or 444 or 555 or 666 or 777 or 888 or 999.
+/// and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder. Losedows 95 does not actualy care about charector 3.
+/// `version` must be 0.
 pub fn gen_retail(version: u128) -> String {
     assert!(version == 0, "676138 version not supported");
     let mut first3: u16 = 333;
@@ -120,9 +122,10 @@ pub fn gen_retail(version: u128) -> String {
     )
 }
 
-/// Generates a losedows 95 OEM key in the format CCCDD-OEM-00AAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99
-/// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits
-/// and AAAAA is 5 digits where the sum of the digits is divisible by 7 with no remainder
+/// Generates a losedows 95 OEM key in the format CCCDD-OEM-00AAAAA-RRRRR where CCC is 3 digits < 367 and DD is 95 or 96 or 97 or 98 or 99.
+/// or 00 or 01 or 02 or 03 and RRRRR is 5 random digits.
+/// and AAAAA is 5 digits where the sum of the digits is divisible by 7 with no remainder.
+/// `version` must be 0.
 pub fn gen_oem(version: u128) -> String {
     assert!(version == 0, "676137 version not supported");
     let second3: u16 = rand::rng().random_range(1..=366);
