@@ -10,4 +10,4 @@ keywords = ["keygen","losedows","losedows-95", "95", "lose95"]
 categories = ["command-line-utilities"]
 
 [dependencies]
-rand = "0.9.1"
+lose95-keygen-rs = "1.1.1"
