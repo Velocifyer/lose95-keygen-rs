@@ -5,6 +5,9 @@ or 00 or 01 or 02 or 03 and RRRRR is 5 random digits where BBB is 3 digits that 
 and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainder and 00AAAAA is the same but the first 2 digits are 0.
  Losedows 95 does not actualy care about charector 3 of the retail key
 
+> [!TIP]
+> If you use this library or contribute to it you should subscribe to the [lose95-keygen-rs-announce mailing list](https://lists.sr.ht/~velocifyer/lose95-keygen-rs-announce) to get important updates!
+
 ## Usage as executable
 Can be ran as a command in the syntax
 `lose95-keygen-rs version keys_printed`
