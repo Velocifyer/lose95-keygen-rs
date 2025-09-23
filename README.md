@@ -8,6 +8,9 @@ and AAAAAAA is 7 digits where the sum of them is divisible by 7 with no remainde
 > [!TIP]
 > If you use this library or contribute to it you should subscribe to the [lose95-keygen-rs-announce mailing list](https://lists.sr.ht/~velocifyer/lose95-keygen-rs-announce) to get important updates!
 
+> [!TIP]
+> Check out the [Mailing lists](https://sr.ht/~velocifyer/lose95-keygen-rs/lists)
+
 ## Usage as executable
 Can be ran as a command in the syntax
 `lose95-keygen-rs version keys_printed`
